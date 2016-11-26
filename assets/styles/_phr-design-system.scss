@@ -1,0 +1,65 @@
+/* ==========================================================================
+   Index
+   ========================================================================== */
+
+/**
+ * Following Necolas' Principles of writing consistent, idiomatic CSS:
+ * https://github.com/necolas/idiomatic-css
+ */
+
+
+/* Normalize
+   ========================================================================== */
+
+/**
+ * Normalize.css, a modern, HTML5-ready alternative to CSS resets:
+ * http://necolas.github.io/normalize.css/
+ */
+
+@import "phr-design-system/normalize";
+
+/**
+ * Kenneth Ormandy's OpenType features—ligatures, kerning, and more—to Normalize.css:
+ * https://github.com/kennethormandy/normalize-opentype.css
+ */
+
+@import "phr-design-system/normalize-opentype";
+
+
+/* Settings
+   ========================================================================== */
+
+@import "phr-design-system/variables";
+@import "phr-design-system/functions";
+@import "phr-design-system/mixins";
+
+
+/* Core
+   ========================================================================== */
+
+@import "phr-design-system/base";
+@import "phr-design-system/typography";
+@import "phr-design-system/tables";
+@import "phr-design-system/code";
+@import "phr-design-system/media";
+@import "phr-design-system/phr-icons";
+@import "phr-design-system/utilities";
+
+
+/* Components
+   ========================================================================== */
+
+@import "phr-design-system/buttons";
+@import "phr-design-system/forms";
+@import "phr-design-system/drops";
+@import "phr-design-system/panels";
+@import "phr-design-system/alerts";
+@import "phr-design-system/modals";
+@import "phr-design-system/layout";
+@import "phr-design-system/constructs";
+
+
+/* Third-party components
+   ========================================================================== */
+
+@import "phr-design-system/third-party/react-scrollbar";
