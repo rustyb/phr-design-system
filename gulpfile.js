@@ -221,13 +221,3 @@ gulp.task('styles', function () {
     .pipe(gulp.dest('.tmp/assets/styles'))
     .pipe(reload({stream: true}));
 });
-
-gulp.task('html', ['styles'], function () {
-  return gulp.src('sandbox/*.html')
-    .pipe($.useref({searchPath: ['.tmp', 'sandbox', '.']}))
-    .pipe($.if('*.js', $.uglify()))
-    .pipe($.if('*.css', $.csso()))
-    .pipe($.if(/\.(css|js)$/, rev()))
-    .pipe(revReplace())
-    .pipe(gulp.dest('dist'));
-});
