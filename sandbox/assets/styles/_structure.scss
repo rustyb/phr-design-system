@@ -265,14 +265,14 @@
   }
 
   &__headline {
-    @include col(12/12);
+    @include column(12/12);
 
     > *:last-child {
       margin-bottom: 0;
     }
     
     @include media(medium-up) {
-      @include col(8/12, $offset: 2/12);
+      @include column(8/12, $offset: 2/12);
     }
   }
 
@@ -359,26 +359,26 @@
   }
 
   .section__headline {
-    @include col(12/12);
+    @include column(12/12);
     
     @include media(medium-up) {
-      @include col(10/12);
+      @include column(10/12);
     }
 
     @include media(large-up) {
-      @include col(8/12);
+      @include column(8/12);
     }
   }
 
   .section__main-content {
     @include media(medium-up) {
-      @include col(9/12);
-      @include shift(1.5/12);
+      @include column(9/12);
+      @include move(1.5/12);
     }
 
     @include media(large-up) {
-      @include col(8/12);
-      @include shift(2/12);
+      @include column(8/12);
+      @include move(2/12);
     }
   }
 

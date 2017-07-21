@@ -198,6 +198,9 @@ gulp.task('styles', function () {
         message: e.message
       });
       console.log('Sass error:', e.toString());
+      if (prodBuild) {
+        process.exit(1);
+      }
       // Allows the watch to continue.
       this.emit('end');
     }))
@@ -205,9 +208,26 @@ gulp.task('styles', function () {
     .pipe($.sass({
       outputStyle: 'expanded',
       precision: 10,
-      includePaths: require('node-bourbon').with('node_modules/jeet/scss', 'assets/styles')
+      functions: {
+        'urlencode($url)': function (url) {
+          var v = new SassString();
+          v.setValue(encodeURIComponent(url.getValue()));
+          return v;
+        }
+      },
+      includePaths: require('node-bourbon').with('node_modules/jeet', 'assets/styles')
     }))
     .pipe($.sourcemaps.write())
     .pipe(gulp.dest('.tmp/assets/styles'))
     .pipe(reload({stream: true}));
+});
+
+gulp.task('html', ['styles'], function () {
+  return gulp.src('sandbox/*.html')
+    .pipe($.useref({searchPath: ['.tmp', 'sandbox', '.']}))
+    .pipe($.if('*.js', $.uglify()))
+    .pipe($.if('*.css', $.csso()))
+    .pipe($.if(/\.(css|js)$/, rev()))
+    .pipe(revReplace())
+    .pipe(gulp.dest('dist'));
 });
