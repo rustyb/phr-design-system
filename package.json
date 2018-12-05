@@ -28,13 +28,13 @@
         "babelify",
         {
           "presets": [
-            "env",
-            "react"
+            "@babel/env",
+            "@babel/react"
           ],
           "plugins": [
-            "transform-es2015-spread",
-            "transform-object-rest-spread",
-            "babel-plugin-transform-es2015-arrow-functions"
+            "@babel/plugin-transform-spread",
+            "@babel/plugin-proposal-object-rest-spread",
+            "@babel/plugin-transform-arrow-functions"
           ]
         }
       ],
@@ -43,15 +43,15 @@
     ]
   },
   "devDependencies": {
-    "babel": "^6.5.2",
-    "babel-preset-react": "^6.5.0",
-    "babel-plugin-transform-es2015-arrow-functions": "^6.22.0",
-    "babel-plugin-transform-es2015-spread": "^6.22.0",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "babelify": "^7.2.0",
+    "@babel/core": "^7.2.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.2.0",
+    "@babel/plugin-transform-arrow-functions": "^7.2.0",
+    "@babel/plugin-transform-spread": "^7.2.0",
+    "@babel/preset-env": "^7.2.0",
+    "@babel/preset-react": "^7.0.0",
+    "babelify": "^10.0.0",
     "browser-sync": "^2.11.1",
-    "browserify": "^13.3.0",
+    "browserify": "^16.2.3",
     "collecticons-processor": "^3.1.0",
     "del": "^2.2.2",
     "envify": "^3.4.1",
